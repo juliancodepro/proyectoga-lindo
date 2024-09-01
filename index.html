@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <title>Tu Tienda</title>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programacion CMV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://wa.link/uxu3kh" class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+</body>
+</html>
+
+<body>
+    <header>
+        <div class="banner">
+            <img src="imagenes/tienda-online.png" alt="Logo de la Tienda">
+            <input type="text" placeholder="Buscar productos..." id="searchInput">
+            <div class="navigation">
+                <button>Categoría</button>
+                <button>Ofertas</button>
+                <button>Historial</button>
+                <button>Supermercado</button>
+                <button>Moda</button>
+                <button>Vender</button>
+                <button>Ayuda</button>
+            </div>
+        </div>
+    </header>
+    
+    <section class="productos">
+        <div class="producto"  class="producto" data-nombre="Producto 1">
+            <img src="imagenes/iphone13.webp" alt="Producto 1" width="120" height="120">
+            <p>Iphone- 13 Pro-Max </p>
+            <p>Precio: $50.00</p>
+        </div>
+        <div class="producto">
+            <img src="imagenes/lavadora.webp" alt="Producto 2" width="120" height="120">
+            <p>Lavadora Inteligente</p>
+            <p>Precio: $35.00</p>
+        </div>
+        
+        <div class="producto">
+            <img src="imagenes/mac" alt="Producto 2" width="120" height="120">
+            <p>Vape Vuse 3500 Puff</p>
+            <p>Precio: 100.000</p>
+        </div>
+
+        <div class="producto">
+            <img src="imagenes/audifonos1.jpeg" alt="Producto 2" width="120" height="120">
+            <p>Audifonos bluetooth</p>
+            <p>Precio: $35.00</p>
+        </div>
+
+        <div class="producto">
+            <img src="imagenes/audifonos2.webp" alt="Producto 2" width="120" height="120">
+            <p>Audifonos</p>
+            <p>Precio: $35.00</p>
+        </div>
+
+        <div class="producto">
+            <img src="imagenes/tele" alt="Producto 2" width="120" height="120">
+            <p>Pantalla Plana</p>
+            <p>Precio: $35.00</p>
+        </div>
+
+        <div class="producto">
+            <img src="imagenes/termo1.webp" alt="Producto 2" width="120" height="120">
+            <p>Termo Frio</p>
+            <p>Precio: $35.00</p>
+        </div>
+
+        <div class="producto">
+            <img src="imagenes/termo2.webp" alt="Producto 2" width="120" height="120">
+            <p>Termo de Cafe</p>
+            <p>Precio: $35.00</p>
+        </div>
+
+        <div class="producto">
+            <img src="imagenes/arma.webp" alt="Producto 2" width="120" height="120">
+            <p>Arma Balin</p>
+            <p>Precio: $35.00</p>
+        </div>
+
+        <div class="producto">
+            <img src="imagenes/camara1" alt="Producto 2" width="120" height="120">
+            <p>Camara Canon-Pro</p>
+            <p>Precio: $35.00</p>
+        </div>
+
+        <div class="producto">
+            <img src="imagenes/camara2.jpg" alt="Producto 2" width="120" height="120">
+            <p>Camara de Seguridad</p>
+            <p>Precio: $35.00</p>
+        </div>
+
+        <div class="producto" data-nombre="zapatos">
+            <img src="imagenes/zapatos.jfif" alt="Producto 2" width="120" height="120">
+            <p>Zapatos Nike</p>
+            <p>Precio: $35.00</p>
+        </div>
+
+    </section>
+    <footer>
+        <!-- Agrega el contenido del pie de página aquí -->
+    </footer>
+  
+    <script>
+        // Obtén una lista de todos los elementos de producto
+        const productos = document.querySelectorAll('.producto');
+        const productoDetalles = document.getElementById('productoDetalles');
+        
+        // Agrega un evento de clic a cada producto
+        productos.forEach(producto => {
+            producto.addEventListener('click', function () {
+                const nombre = this.getAttribute('data-nombre'); // Obtiene el nombre del producto
+                const descripcion = this.querySelector('p:first-child').textContent;
+                const precio = this.querySelector('p:last-child').textContent;
+
+                // Construye el contenido de los detalles del producto
+                const contenidoDetalles = `
+                    <h2>${nombre}</h2>
+                    <img src="${this.querySelector('img').src}" alt="${nombre}" width="120" height="120">
+                    <p>${descripcion}</p>
+                    <p>${precio}</p>
+                `;
+
+                // Muestra los detalles del producto en el contenedor
+                productoDetalles.innerHTML = contenidoDetalles;
+            });
+        });
+    </script>
+</body>
+</html>
+    
+</body>
+</html>
