@@ -1,0 +1,158 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #007bff, #00d2d3);
+    color: white;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    margin-right: 9.8rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.btn-agregar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-left: 1rem;
+}
+
+.btn-agregar:hover {
+    background-color: #218838;
+}
+
+
+/* Main */
+
+main {
+    padding-top: 80px;
+}
+
+
+/* Grid de productos */
+
+.productos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.producto {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.producto h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.producto p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.close:hover {
+    color: #007bff;
+}
+
+form input,
+form button {
+    width: calc(100% - 1rem);
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
