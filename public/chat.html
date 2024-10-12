@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">Mi Tienda</div>
+            <div class="navbar-buttons">
+                <li><a href="tienda.html"> Tienda </a> </li>
+
+            </div>
+        </nav>
+    </header>
+
+<div class="chat-container">
+    <div class="chat-box" id="chatBox"></div>
+    <div class="input-box">
+        <input type="text" id="userInput" placeholder="Escribe tu mensaje aquí" onkeypress="checkEnter(event)">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+</div>
+
+<script>
+    // Enviar mensaje al hacer clic en el botón o al presionar "Enter"
+    function checkEnter(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
+
+    function sendMessage() {
+        const chatBox = document.getElementById('chatBox');
+        const userInput = document.getElementById('userInput').value;
+
+        if (userInput.trim() === "") return;
+
+        // Crear mensaje del usuario
+        const userMessage = document.createElement('div');
+        userMessage.className = 'message user';
+        userMessage.textContent = userInput;
+        chatBox.appendChild(userMessage);
+
+        // Crear respuesta del bot
+        const botMessage = document.createElement('div');
+        botMessage.className = 'message bot';
+        botMessage.textContent = getBotResponse(userInput);
+        chatBox.appendChild(botMessage);
+
+        // Limpiar la entrada del usuario
+        document.getElementById('userInput').value = '';
+
+        // Hacer scroll hacia abajo automáticamente
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function getBotResponse(input) {
+        input = input.toLowerCase();
+
+        // Respuestas predefinidas a preguntas comunes
+        if (input.includes("cómo estás")) {
+            return "¡Estoy bien! Gracias por preguntar.";
+        } else if (input.includes("cuál es tu nombre")) {
+            return "Soy un chatbot, aún no tengo nombre.";
+        } else if (input.includes("qué puedes hacer")) {
+            return "Puedo responder preguntas simples. ¡Inténtalo!";
+        } else if (input.includes("adiós") || input.includes("hasta luego")) {
+            return "¡Hasta luego! Que tengas un buen día.";
+        } else if (input.includes("qué día es hoy")) {
+            const today = new Date();
+            return `Hoy es ${today.toLocaleDateString()}.`;
+        } else if (input.includes("qué hora es")) {
+            const now = new Date();
+            return `Son las ${now.toLocaleTimeString()}.`;
+        } else {
+            return "Lo siento, no entiendo esa pregunta.";
+        }
+    }
+</script>
+
+</body>
+</html>
